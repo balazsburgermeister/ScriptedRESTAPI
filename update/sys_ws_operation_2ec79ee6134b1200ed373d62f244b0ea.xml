@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Create Poll</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var data = request.body.data;
+    var pollHelper = new x_snc_polls.PollData_Creator();
+    var groupId = getUserGroupId(data.usergroup);
+
+    // Create Poll record
+    var pollRecord = pollHelper.createPoll(data, groupId);
+
+    // Create question record and choices
+    var questionData = data.questions;
+    pollHelper.createQuestions(questionData, pollRecord.getUniqueValue());
+
+    // Set Response Details
+    var pollDetail = {
+        number: pollRecord.number,
+        name: pollRecord.name
+    };
+    response.setStatus(201);
+    response.setLocation(request.url + "/" + pollRecord.getUniqueValue());
+    response.setBody(pollDetail);
+
+    // Helper function
+    function getUserGroupId(groupName) {
+        var groupRec = new GlideRecord("sys_user_group");
+        groupRec.addQuery("name", groupName);
+        groupRec.query();
+        groupRec.next();
+        return groupRec.getUniqueValue();
+    }
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_snc_polls/v1/poll</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:20:02</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>2ec79ee6134b1200ed373d62f244b0ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create Poll</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_ws_operation_2ec79ee6134b1200ed373d62f244b0ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:20:02</sys_updated_on>
+        <web_service_definition display_value="Poll">e917dee6134b1200ed373d62f244b08f</web_service_definition>
+        <web_service_version display_value="v1">a227dee6134b1200ed373d62f244b0cd</web_service_version>
+    </sys_ws_operation>
+</record_update>
