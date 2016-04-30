@@ -58,6 +58,8 @@ PollData_Creator.prototype = {
 			for (var j = 0; j < choiceData.length; j++) {
 			this.createChoice(choiceData[j], questionRecID);
 		}
+	}else {
+		throw new sn_ws_err.BadRequestError("Questions need to have multiple choices");
 	}
 },
 
@@ -87,6 +89,8 @@ voteInPoll: function(voteData, pollId) {
 				}
 			}
 		}
+	} else {
+		throw new sn_ws_err.BadRequestError("Expected a list of votes");
 	}
 },
 
@@ -98,7 +102,7 @@ type: 'PollData_Creator'
         <sys_created_on>2016-04-30 22:03:05</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>67941aa6134b1200ed373d62f244b0d2</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>PollData_Creator</sys_name>
         <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
         <sys_policy>read</sys_policy>
@@ -106,6 +110,6 @@ type: 'PollData_Creator'
         <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
         <sys_update_name>sys_script_include_67941aa6134b1200ed373d62f244b0d2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-04-30 22:31:18</sys_updated_on>
+        <sys_updated_on>2016-04-30 22:45:46</sys_updated_on>
     </sys_script_include>
 </record_update>
