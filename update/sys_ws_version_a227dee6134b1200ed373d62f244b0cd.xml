@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_version">
+    <sys_ws_version action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <deprecated>false</deprecated>
+        <is_default>false</is_default>
+        <short_description/>
+        <sys_class_name>sys_ws_version</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:14:01</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a227dee6134b1200ed373d62f244b0cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>v1</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_ws_version_a227dee6134b1200ed373d62f244b0cd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:14:01</sys_updated_on>
+        <version>1</version>
+        <version_id>v1</version_id>
+        <web_service_definition display_value="Poll">e917dee6134b1200ed373d62f244b08f</web_service_definition>
+    </sys_ws_version>
+</record_update>
