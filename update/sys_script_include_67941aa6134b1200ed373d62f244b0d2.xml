@@ -14,7 +14,7 @@ PollData_Creator.prototype = {
 	},
 	
 	createPoll: function(data, groupId) {
-		var pollRecord = new GlideRecord("x_snc_polls_poll");
+		var pollRecord = new GlideRecordSecure("x_snc_polls_poll");
 		pollRecord.name = data.name;
 		pollRecord.assigned_group = groupId;
 		pollRecord.insert();
@@ -22,14 +22,14 @@ PollData_Creator.prototype = {
 	},
 	
 	createQuestion: function(questionData, pollId) {
-		var questionRec = new GlideRecord("x_snc_polls_question");
+		var questionRec = new GlideRecordSecure("x_snc_polls_question");
 		questionRec.poll = pollId;
 		questionRec.question = questionData.question;
 		return questionRec.insert();
 	},
 	
 	createChoice: function(choiceData, questionId) {
-		var choiceRec = new GlideRecord("x_snc_polls_choices");
+		var choiceRec = new GlideRecordSecure("x_snc_polls_choices");
 		choiceRec.choice = choiceData.choice;
 		choiceRec.question = questionId;
 		choiceRec.insert();
@@ -78,7 +78,7 @@ voteInPoll: function(voteData, pollId) {
 				var choices = questions[voteData[i].question_id].choices;
 				for (var j = 0; j < choices.length; j++) {
 					if (voteData[i].vote === choices[j].choice) {
-						var responseRec = new GlideRecord("x_snc_polls_poll_response");
+						var responseRec = new GlideRecordSecure("x_snc_polls_poll_response");
 						responseRec.poll = pollId;
 						responseRec.question = voteData[i].question_id;
 						responseRec.response = voteData[i].vote;
@@ -98,7 +98,7 @@ type: 'PollData_Creator'
         <sys_created_on>2016-04-30 22:03:05</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>67941aa6134b1200ed373d62f244b0d2</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>PollData_Creator</sys_name>
         <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
         <sys_policy>read</sys_policy>
@@ -106,6 +106,6 @@ type: 'PollData_Creator'
         <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
         <sys_update_name>sys_script_include_67941aa6134b1200ed373d62f244b0d2</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-04-30 22:03:05</sys_updated_on>
+        <sys_updated_on>2016-04-30 22:31:18</sys_updated_on>
     </sys_script_include>
 </record_update>
