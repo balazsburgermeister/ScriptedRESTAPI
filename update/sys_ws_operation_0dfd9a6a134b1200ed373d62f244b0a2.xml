@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>Retrieve poll detail (v2)</name>
+        <operation_script><![CDATA[(function process( /*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var id = request.pathParams.poll_id;
+    var pollHelper = new x_snc_polls.PollData_Retriever();
+    var pollRecord = new GlideRecordSecure("x_snc_polls_poll");
+    pollRecord.get(id);
+    
+    var pollResponse = {
+        name: pollRecord.getValue("name"),
+        questions: pollHelper.getQuestions(id).as_list,
+    };
+    return pollResponse;
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_snc_polls/v2/poll/{poll_id}</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/{poll_id}</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:43:41</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>0dfd9a6a134b1200ed373d62f244b0a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Retrieve poll detail (v2)</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_ws_operation_0dfd9a6a134b1200ed373d62f244b0a2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:43:41</sys_updated_on>
+        <web_service_definition display_value="Poll">e917dee6134b1200ed373d62f244b08f</web_service_definition>
+        <web_service_version display_value="v2">0dfd9a6a134b1200ed373d62f244b09f</web_service_version>
+    </sys_ws_operation>
+</record_update>
