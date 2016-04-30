@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_polls.PollData_Creator</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>PollData_Creator</name>
+        <script><![CDATA[var PollData_Creator = Class.create();
+PollData_Creator.prototype = {
+	initialize: function() {
+		this.pollRetriever = new x_snc_polls.PollData_Retriever();
+	},
+	
+	createPoll: function(data, groupId) {
+		var pollRecord = new GlideRecord("x_snc_polls_poll");
+		pollRecord.name = data.name;
+		pollRecord.assigned_group = groupId;
+		pollRecord.insert();
+		return pollRecord;
+	},
+	
+	createQuestion: function(questionData, pollId) {
+		var questionRec = new GlideRecord("x_snc_polls_question");
+		questionRec.poll = pollId;
+		questionRec.question = questionData.question;
+		return questionRec.insert();
+	},
+	
+	createChoice: function(choiceData, questionId) {
+		var choiceRec = new GlideRecord("x_snc_polls_choices");
+		choiceRec.choice = choiceData.choice;
+		choiceRec.question = questionId;
+		choiceRec.insert();
+	},
+	
+	createQuestions: function(questionData, pollId) {
+		if (questionData instanceof Array) {
+			for (var i = 0; i < questionData.length; i++) {
+				this.createQuestionAndChoices(questionData[i], pollId);
+			}
+		} else {
+			this.createQuestionAndChoices(questionData, pollRecord.getUniqueValue());
+		}
+	},
+	
+	createQuestionAndChoices: function(questionData, pollId) {
+		var questionId = this.createQuestion(questionData, pollId);
+		this.createChoices(questionData.choices, questionId);
+	},
+	
+	createChoices: function(choiceData, questionRecID) {
+		if (questionRecID === undefined) {
+			return;
+		}
+		if (choiceData instanceof Array && choiceData.length > 1) { //make sure there are multiple choices
+			for (var j = 0; j < choiceData.length; j++) {
+			this.createChoice(choiceData[j], questionRecID);
+		}
+	}
+},
+
+voteInPoll: function(voteData, pollId) {
+	if (pollId === undefined) {
+		return;
+	}
+	
+	// voteData: list of {question_id, choice value}
+	// [
+	//     {question_id: 'abc123', vote: 'red'},
+	//	   {question_id: 'xyz987', vote: '3'}
+	// ]
+	if (voteData instanceof Array) {
+		var questions = this.pollRetriever.getQuestions(pollId).as_map;
+		for (var i = 0; i < voteData.length; i++) {
+			if (voteData[i].question_id in questions) {
+				var choices = questions[voteData[i].question_id].choices;
+				for (var j = 0; j < choices.length; j++) {
+					if (voteData[i].vote === choices[j].choice) {
+						var responseRec = new GlideRecord("x_snc_polls_poll_response");
+						responseRec.poll = pollId;
+						responseRec.question = voteData[i].question_id;
+						responseRec.response = voteData[i].vote;
+						responseRec.insert();
+					}
+				}
+			}
+		}
+	}
+},
+
+
+type: 'PollData_Creator'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:03:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>67941aa6134b1200ed373d62f244b0d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PollData_Creator</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_script_include_67941aa6134b1200ed373d62f244b0d2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:03:05</sys_updated_on>
+    </sys_script_include>
+</record_update>
