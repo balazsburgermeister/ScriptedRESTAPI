@@ -9,15 +9,15 @@
         <sys_class_name>ua_table_licensing_config</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 21:50:18</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>8fb15a66134b1200ed373d62f244b0b2</sys_id>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8d0fd520741712007f440d13f314462b</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_polls_poll</sys_name>
         <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
-        <sys_update_name>ua_table_licensing_config_8fb15a66134b1200ed373d62f244b0b2</sys_update_name>
+        <sys_update_name>ua_table_licensing_config_8d0fd520741712007f440d13f314462b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2016-04-30 21:50:18</sys_updated_on>
     </ua_table_licensing_config>

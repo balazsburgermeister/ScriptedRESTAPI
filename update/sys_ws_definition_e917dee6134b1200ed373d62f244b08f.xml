@@ -18,7 +18,7 @@
         <sys_class_name>sys_ws_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 22:13:51</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>e917dee6134b1200ed373d62f244b08f</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Poll</sys_name>
