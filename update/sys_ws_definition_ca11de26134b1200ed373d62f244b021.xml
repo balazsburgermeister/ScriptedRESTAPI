@@ -18,7 +18,7 @@
         <sys_class_name>sys_ws_definition</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 21:47:37</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>ca11de26134b1200ed373d62f244b021</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Hello, world!</sys_name>

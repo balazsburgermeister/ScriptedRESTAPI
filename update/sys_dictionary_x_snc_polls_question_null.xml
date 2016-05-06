@@ -51,17 +51,17 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 21:51:27</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>0802da66134b1200ed373d62f244b097</sys_id>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>690fd520741712007f440d13f314463a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_snc_polls_question</sys_name>
         <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
-        <sys_update_name>sys_dictionary_x_snc_polls_question_null</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-04-30 21:51:27</sys_updated_on>
+        <sys_update_name>sys_dictionary_x_snc_polls_question_NULL</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2016-05-06 23:16:40</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

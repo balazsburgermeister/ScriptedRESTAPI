@@ -8,7 +8,7 @@
         <sys_class_name>sys_number</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 21:57:01</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>694396a6134b1200ed373d62f244b052</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>PLR</sys_name>

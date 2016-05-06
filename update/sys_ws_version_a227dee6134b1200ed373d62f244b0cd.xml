@@ -8,7 +8,7 @@
         <sys_class_name>sys_ws_version</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-30 22:14:01</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>a227dee6134b1200ed373d62f244b0cd</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>v1</sys_name>
