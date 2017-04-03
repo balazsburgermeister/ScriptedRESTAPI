@@ -1,0 +1,3 @@
+tests["Status code is 200"] = responseCode.code === 200;
+tests["Content-Type is application/json;charset=UTF-8"] = postman.getResponseHeader("Content-Type") === "application/json;charset=UTF-8";
+tests["Response Body Contains result"] = responseBody.has("result");
