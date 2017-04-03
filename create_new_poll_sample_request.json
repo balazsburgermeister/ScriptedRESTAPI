@@ -1,0 +1,23 @@
+{
+  "questions": [
+    {
+      "choices": [
+        {
+          "choice": "Audi"
+        },
+        {
+          "choice": "BMW"
+        },
+        {
+          "choice": "Corvette"
+        },
+        {
+          "choice": "Tesla"
+        }
+      ],
+      "question": "what is your favorite car"
+    }
+  ],
+  "usergroup": "Software",
+  "name": "Second poll"
+}
