@@ -1,0 +1,2 @@
+tests["Status code is 204"] = responseCode.code === 204;
+tests["Body is empty"] = responseBody === "";
