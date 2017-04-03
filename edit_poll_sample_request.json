@@ -1,0 +1,19 @@
+[
+  {
+    "choices": [
+      {
+        "choice": "Avatar"
+      },
+      {
+        "choice": "Avengers"
+      },
+      {
+        "choice": "Toy Story"
+      },
+      {
+        "choice": "Frozen"
+      }
+    ],
+    "question": "what is your favorite film"
+  }
+]
