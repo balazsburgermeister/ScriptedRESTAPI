@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Choices" max_length="40" name="x_snc_polls_choices" type="collection">
+        <element label="Choice" max_length="40" name="choice" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Question" max_length="32" name="question" reference="x_snc_polls_question" reference_cascade_rule="delete" type="reference"/>
+        <element label="Votes" max_length="40" name="votes" type="integer"/>
+        <index name="index">
+            <element name="question"/>
+        </index>
+    </element>
+</database>

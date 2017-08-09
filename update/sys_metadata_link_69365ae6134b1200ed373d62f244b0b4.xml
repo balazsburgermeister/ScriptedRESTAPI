@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>3c265ae6134b1200ed373d62f244b0fc</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_snc_polls_poll">
+    <x_snc_polls_poll action="INSERT_OR_UPDATE">
+        <assigned_group display_value="NY DB" name="NY DB">5f74727dc0a8010e01efe33a251993f9</assigned_group>
+        <name>First poll</name>
+        <number>POL0001001</number>
+        <state>active</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:09:44</sys_created_on>
+        <sys_id>3c265ae6134b1200ed373d62f244b0fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:09:44</sys_updated_on>
+    </x_snc_polls_poll>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:09:51</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>69365ae6134b1200ed373d62f244b0b4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>First poll</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_metadata_link_69365ae6134b1200ed373d62f244b0b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:09:51</sys_updated_on>
+        <tablename>x_snc_polls_poll</tablename>
+    </sys_metadata_link>
+</record_update>

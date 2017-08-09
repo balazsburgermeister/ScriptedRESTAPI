@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>ae769ae6134b1200ed373d62f244b088</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_snc_polls_choices">
+    <x_snc_polls_choices action="INSERT_OR_UPDATE">
+        <choice>Blue</choice>
+        <number>CHO0001002</number>
+        <question display_value="QUE0001001">9f369ae6134b1200ed373d62f244b0d7</question>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:11:08</sys_created_on>
+        <sys_id>ae769ae6134b1200ed373d62f244b088</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:11:08</sys_updated_on>
+        <votes/>
+    </x_snc_polls_choices>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-30 22:12:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>03b6dae6134b1200ed373d62f244b09d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CHO0001002</sys_name>
+        <sys_package display_value="Polls" source="x_snc_polls">cd1f2766133e1200ed373d62f244b082</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Polls">cd1f2766133e1200ed373d62f244b082</sys_scope>
+        <sys_update_name>sys_metadata_link_03b6dae6134b1200ed373d62f244b09d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-30 22:12:08</sys_updated_on>
+        <tablename>x_snc_polls_choices</tablename>
+    </sys_metadata_link>
+</record_update>

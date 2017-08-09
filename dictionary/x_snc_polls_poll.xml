@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Poll" max_length="40" name="x_snc_polls_poll" type="collection">
+        <element label="Assigned Group" max_length="32" name="assigned_group" reference="sys_user_group" type="reference"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element label="Active" value="active"/>
+                <element label="Complete" value="complete"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="assigned_group"/>
+        </index>
+    </element>
+</database>
